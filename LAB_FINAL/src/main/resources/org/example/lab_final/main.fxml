@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns = "http://javafx.com/javafx" xmlns:fx = "http://javafx.com/fxml"
+      fx:controller="org.example.lab_final.TrainController">
+    <HBox>
+        <VBox>
+            <Label text = "Добавить локомотив:"/>
+            <TextField fx:id = "locomotivePower" promptText = "Число вагонов"/>
+            <Button text = "Добавить" onAction = "#addLocomotive"/>
+        </VBox>
+        <VBox>
+            <Label text = "Добавить вагон:"/>
+            <TextField fx:id = "cargoName" promptText = "Название товара"/>
+            <Button text = "Добавить" onAction = "#addWagon"/>
+        </VBox>
+    </HBox>
+    <HBox>
+        <Label text = "Выберете состав:"/>
+        <ComboBox fx:id = "compositionSelector" onAction = "#switchComposition"/>
+        <Button text = "Создать новый состав" onAction = "#createNewComposition"/>
+        <Button text = "Удалить последний добавленный вагон" onAction = "#removeLastWagon"/>
+        <Button text = "Удалить выбранный состав" onAction = "#removeSelectComposition"/>
+    </HBox>
+    <ListView fx:id="trainList"/>
+</VBox>
